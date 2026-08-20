@@ -12,7 +12,12 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AcademyRouteImport } from './routes/academy'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as SmpRouteImport } from './routes/smp'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TransformationsRouteImport } from './routes/transformations'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
@@ -32,9 +37,34 @@ const AcademyRoute = AcademyRouteImport.update({
   path: '/academy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SmpRoute = SmpRouteImport.update({
   id: '/smp',
   path: '/smp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TransformationsRoute = TransformationsRouteImport.update({
@@ -57,7 +87,12 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/academy': typeof AcademyRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/privacy': typeof PrivacyRoute
+  '/reviews': typeof ReviewsRoute
   '/smp': typeof SmpRoute
+  '/terms': typeof TermsRoute
   '/transformations': typeof TransformationsRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services/': typeof ServicesIndexRoute
@@ -66,7 +101,12 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/academy': typeof AcademyRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/privacy': typeof PrivacyRoute
+  '/reviews': typeof ReviewsRoute
   '/smp': typeof SmpRoute
+  '/terms': typeof TermsRoute
   '/transformations': typeof TransformationsRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services': typeof ServicesIndexRoute
@@ -76,7 +116,12 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/academy': typeof AcademyRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/privacy': typeof PrivacyRoute
+  '/reviews': typeof ReviewsRoute
   '/smp': typeof SmpRoute
+  '/terms': typeof TermsRoute
   '/transformations': typeof TransformationsRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services/': typeof ServicesIndexRoute
@@ -87,7 +132,12 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/academy'
+    | '/contact'
+    | '/faq'
+    | '/privacy'
+    | '/reviews'
     | '/smp'
+    | '/terms'
     | '/transformations'
     | '/services/$slug'
     | '/services/'
@@ -96,7 +146,12 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/academy'
+    | '/contact'
+    | '/faq'
+    | '/privacy'
+    | '/reviews'
     | '/smp'
+    | '/terms'
     | '/transformations'
     | '/services/$slug'
     | '/services'
@@ -105,7 +160,12 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/academy'
+    | '/contact'
+    | '/faq'
+    | '/privacy'
+    | '/reviews'
     | '/smp'
+    | '/terms'
     | '/transformations'
     | '/services/$slug'
     | '/services/'
@@ -115,7 +175,12 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AcademyRoute: typeof AcademyRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ReviewsRoute: typeof ReviewsRoute
   SmpRoute: typeof SmpRoute
+  TermsRoute: typeof TermsRoute
   TransformationsRoute: typeof TransformationsRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
@@ -144,11 +209,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AcademyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/smp': {
       id: '/smp'
       path: '/smp'
       fullPath: '/smp'
       preLoaderRoute: typeof SmpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/transformations': {
@@ -179,7 +279,12 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AcademyRoute: AcademyRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  PrivacyRoute: PrivacyRoute,
+  ReviewsRoute: ReviewsRoute,
   SmpRoute: SmpRoute,
+  TermsRoute: TermsRoute,
   TransformationsRoute: TransformationsRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   ServicesIndexRoute: ServicesIndexRoute,
