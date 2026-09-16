@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react";
 import { whatsappHref } from "@/config/site";
-import { useBooking } from "@/components/BookingProvider";
+import { useBooking } from "@/components/booking-context";
 
 export function MobileCtaBar() {
   const { open } = useBooking();

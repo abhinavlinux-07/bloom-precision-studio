@@ -1,7 +1,5 @@
 import {
-  createContext,
   useCallback,
-  useContext,
   useMemo,
   useState,
   type ReactNode,
@@ -14,18 +12,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { services, smpService } from "@/config/services";
 import { whatsappHref } from "@/config/site";
-
-type BookingContextValue = {
-  open: (service?: string) => void;
-};
-
-const BookingContext = createContext<BookingContextValue | null>(null);
-
-export function useBooking() {
-  const ctx = useContext(BookingContext);
-  if (!ctx) throw new Error("useBooking must be used inside BookingProvider");
-  return ctx;
-}
+import { BookingContext } from "@/components/booking-context";
 
 const bookingSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(100),

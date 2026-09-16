@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
-import { useBooking } from "@/components/BookingProvider";
+import { useBooking } from "@/components/booking-context";
 import { processSteps, generalFaqs, type Faq } from "@/config/services";
 import {
   Accordion,
