@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, MessageCircle, Phone } from "lucide-react";
 import logo from "@/assets/bb-logo.png.asset.json";
 import { site, whatsappHref, telHref } from "@/config/site";
-import { useBooking } from "@/components/BookingProvider";
+import { useBooking } from "@/components/booking-context";
 import { cn } from "@/lib/utils";
 
 const nav = [
